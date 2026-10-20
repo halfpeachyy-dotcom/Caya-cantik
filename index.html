@@ -1,0 +1,318 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Caya & Fatur ♡</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #fff8fa;
+  color: #684e59;
+  font-family: 'DM Sans', sans-serif;
+  padding: 25px 18px 40px;
+}
+
+.container {
+  max-width: 540px;
+  margin: auto;
+}
+
+header {
+  text-align: center;
+  padding: 35px 10px 25px;
+}
+
+.heart {
+  color: #e9a7bc;
+  font-size: 30px;
+  margin-bottom: 12px;
+}
+
+h1 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 500;
+  font-size: 40px;
+  color: #a65f7b;
+}
+
+.subtitle {
+  font-size: 11px;
+  letter-spacing: 2px;
+  margin-top: 12px;
+  color: #b995a3;
+}
+
+.roast-box {
+  text-align: center;
+  margin: 5px 0 30px;
+}
+
+.ugly-button {
+  background: #f5dce6;
+  color: #a65f7b;
+  border: 1px solid #edc5d5;
+  border-radius: 30px;
+  padding: 13px 24px;
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.ugly-button:hover {
+  background: #e9b7ca;
+  transform: rotate(-3deg) scale(1.05);
+}
+
+#roast-message {
+  font-size: 12px;
+  color: #b995a3;
+  margin-top: 12px;
+  min-height: 18px;
+}
+
+.section-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 24px;
+  font-weight: 500;
+  color: #a65f7b;
+  margin: 25px 0 15px;
+}
+
+.card {
+  background: white;
+  border: 1px solid #f5e5eb;
+  border-radius: 18px;
+  padding: 20px;
+  margin-bottom: 12px;
+  box-shadow: 0 5px 20px #e9b9c51a;
+}
+
+.date {
+  font-size: 10px;
+  color: #c17d98;
+  letter-spacing: 1.5px;
+}
+
+.event {
+  font-size: 16px;
+  font-weight: 600;
+  margin-top: 8px;
+}
+
+.note {
+  font-size: 12px;
+  color: #ae929d;
+  margin-top: 8px;
+  line-height: 1.7;
+}
+
+input[type="date"] {
+  display: block;
+  margin-top: 15px;
+  padding: 12px;
+  width: 100%;
+  border: 1px solid #f0d8e1;
+  border-radius: 12px;
+  background: #fff8fa;
+  color: #a65f7b;
+  font-family: inherit;
+  font-size: 14px;
+  outline: none;
+}
+
+.song {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+}
+
+.album {
+  width: 48px;
+  height: 48px;
+  border-radius: 13px;
+  background: #f9e4ec;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  flex-shrink: 0;
+}
+
+.song-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.song-title {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.artist {
+  font-size: 12px;
+  color: #ae929d;
+  margin-top: 5px;
+}
+
+.play {
+  color: #a65f7b;
+  text-decoration: none;
+  font-size: 11px;
+  border: 1px solid #f0d8e1;
+  border-radius: 20px;
+  padding: 9px 12px;
+  white-space: nowrap;
+}
+
+.play:hover {
+  background: #fff0f5;
+}
+
+.footer {
+  text-align: center;
+  margin-top: 35px;
+  font-size: 11px;
+  color: #c4a6b2;
+}
+
+.sparkle {
+  color: #e9a7bc;
+}
+
+@media (max-width: 400px) {
+  h1 {
+    font-size: 34px;
+  }
+
+  .card {
+    padding: 16px;
+  }
+}
+</style>
+</head>
+
+<body>
+<div class="container">
+
+  <header>
+    <div class="heart">♡</div>
+    <h1>Caya & Fatur</h1>
+    <p class="subtitle">A FEW THINGS ABOUT US</p>
+  </header>
+
+  <div class="roast-box">
+    <button class="ugly-button" onclick="roastFatur()">
+      FATUR JELEK ♡
+    </button>
+    <p id="roast-message">don't even try to deny it.</p>
+  </div>
+
+  <h2 class="section-title">our date <span class="sparkle">✳</span></h2>
+
+  <div class="card">
+    <p class="date">OUR ANNIVERSARY</p>
+    <p class="event">When did it all start? ♡</p>
+    <input type="date" id="anniversary" onchange="saveDate()">
+    <p class="note" id="countdown">Pick your anniversary date!</p>
+  </div>
+
+  <h2 class="section-title">important dates <span class="sparkle">♡</span></h2>
+
+  <div class="card">
+    <p class="date">29 MARCH</p>
+    <p class="event">Caya's birthday 🎂</p>
+  </div>
+
+  <div class="card">
+    <p class="date">15 MAY</p>
+    <p class="event">Fatur's birthday 🎂</p>
+  </div>
+
+  <h2 class="section-title">our song <span class="sparkle">♫</span></h2>
+
+  <div class="card song">
+    <div class="album">🎧</div>
+    <div class="song-info">
+      <p class="song-title">you!</p>
+      <p class="artist">LANY</p>
+    </div>
+    <a
+      class="play"
+      href="https://open.spotify.com/search/you%21%20LANY"
+      target="_blank"
+      rel="noopener"
+    >listen ↗</a>
+  </div>
+
+  <footer class="footer">
+    caya × fatur ♡
+  </footer>
+
+</div>
+
+<script>
+const messages = [
+  "confirmed: certified jelek.",
+  "404: good looks not found.",
+  "beauty not found. try again later.",
+  "Caya deserves compensation for this.",
+  "handsome? that's a funny joke.",
+  "warning: Fatur's ego is too big.",
+  "still ugly. no updates available.",
+  "even your mirror needs a break."
+];
+
+function roastFatur() {
+  const random = Math.floor(Math.random() * messages.length);
+  document.getElementById("roast-message").textContent =
+    messages[random];
+}
+
+function saveDate() {
+  const date = document.getElementById("anniversary").value;
+
+  if (!date) return;
+
+  localStorage.setItem("ourDate", date);
+  showDate();
+}
+
+function showDate() {
+  const saved = localStorage.getItem("ourDate");
+  const input = document.getElementById("anniversary");
+  const output = document.getElementById("countdown");
+
+  if (!saved) return;
+
+  input.value = saved;
+
+  const start = new Date(saved + "T00:00:00");
+  const today = new Date();
+  today.setHours(0, 0, 0, 0);
+
+  if (start > today) {
+    output.textContent = "This date is still in the future! ♡";
+    return;
+  }
+
+  const days = Math.floor((today - start) / 86400000);
+  output.textContent = days + " days of dealing with Fatur jelek ♡";
+}
+
+showDate();
+</script>
+</body>
+</html>
